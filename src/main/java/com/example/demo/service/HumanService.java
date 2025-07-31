@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,11 @@ public class HumanService implements HumanServiceImpl {
 		humanDto.setId(humans.getId());
 		humanDto.setLname(humans.getLname());
 		return humanDto;
+	}
+	@Override
+	public List<Human> getAllHumans() {
+		// TODO Auto-generated method stub
+		return humanRepo.findAll().stream().toList();
 	}
 
 }
